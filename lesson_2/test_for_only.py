@@ -19,11 +19,14 @@ try:
 
     #проверяем, что номер телефона в ссылке корректный
     assert driver.find_element(By.CSS_SELECTOR, "a[href='tel:+74957409979']"), "Number incorrect"
+
+    #проверяем, что почта в ссылке указана правильно
+    assert driver.find_element(By.CSS_SELECTOR, "a[href='mailto:hello@only.com.ru']"), "mail incorrect"
     
     #выводим в консоль информацию, что на странице есть футер и номер в ссылке корректный
     print("Footer is found on the main page")
     print("Number in link is correct on the main page")
-
+    print("e-mail in link is correct on the main page")
     
   
     #находим ссылку "карьера" и с помощью скрипта проходим по ней
@@ -33,12 +36,17 @@ try:
   
     #ищем футер на странице карьера
     assert driver.find_element(By.TAG_NAME, "footer"), "Footer not found"
+
     #проверяем ссылку на телефон на странице карьера
     assert driver.find_element(By.CSS_SELECTOR, "a[href='tel:+74957409979']"), "Number incorrect"
+
+    #проверяем ссылку на почту на странице карьера
+    assert driver.find_element(By.CSS_SELECTOR, "a[href='mailto:hello@only.com.ru']"), "mail incorrect"
 
     #выводим в консоль информацию, что на странице карьера есть футер и номер в ссылке корректный
     print("Footer is found on the job page")
     print("Number in link is correct on the job page")
+    print("e-mail in link is correct on the job page")
 
 
 finally:
